@@ -1,0 +1,94 @@
+.search-bar {
+    width: auto;
+    display: flex;
+    // border: 1px solid red;
+    :focus-within {
+        border-radius: var(--border-radious);
+        box-shadow: 0 0 0 2px var(--accent);
+        
+    }
+}
+
+.search-bar:focus-within .search-button {
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+
+.react-aria-SearchField {
+    flex: 1;
+    width: auto;
+    display: grid;
+    grid-template-areas: "label label"
+                         "input button"
+                         "help  help";
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    // width: fit-content;
+
+    
+    .react-aria-Input {
+        color: var(--text);
+        outline: none;
+        grid-area: input;
+        padding: 0.286rem 1.714rem 0.286rem 0.286rem;
+        margin: 0;
+        border: 1px solid var(--primary);
+        border-right: none;
+        // border-radius: 6px;
+        border-radius: var(--border-radious) 0 0 var(--border-radious);
+        background: var(--background);
+        // font-size: 1.143rem;
+
+    }
+
+    
+    &[data-focused] {
+        // outline: none;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 1px var(--accent);
+      }
+      .react-aria-Button {
+        grid-area: button;
+        width: 1.143rem;
+        height: 1.143rem;
+        // border-radius: 1.143rem;
+        margin-left: -1.429rem;
+        font-size: 0.857rem;
+        line-height: 0.857rem;
+        vertical-align: middle;
+        text-align: center;
+        background: none;
+        color: white;
+        border: none;
+        padding: 0;
+    
+
+      }
+    
+      &[data-empty] button {
+        display: none;
+      }
+}
+
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 var(--border-radious) var(--border-radious) 0;
+    // border-style: none;
+    border: 1px solid var(--primary);
+    // border-left: none;
+    border-color: var(--primary);
+    background-color: var(--accent);
+    width: 2rem;
+
+    &[data-focused] {
+        outline: none;
+            border-radius: var(--border-radious);
+            box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    &[data-hovered] {
+        cursor: pointer;
+    }
+}

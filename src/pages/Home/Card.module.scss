@@ -1,0 +1,46 @@
+.card {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}
+
+.category-link {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--unit-small);
+    text-decoration: none;
+    color: inherit;
+    text-decoration: inherit;
+
+    > img {
+        display: none;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    > span {
+        justify-self: flex-start;
+        color: var(--primary);
+
+        &:hover {
+            color: var(--accent);
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        
+        > img {
+            display: block;
+        }
+
+    }
+    
+
+}
+

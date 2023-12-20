@@ -1,0 +1,86 @@
+@keyframes rotation {
+    50% {
+        transform: rotate(190deg);
+    }
+    
+    75% {
+        transform: rotate(175deg);
+    }    
+    
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes reverse-rotation {
+    0% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(-10deg);
+    }    
+
+    75% {
+        transform: rotate(5deg);
+    }    
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@mixin themeRotator($pressed) {
+
+    @if $pressed {
+        .icon-container {
+            // transform: rotate(180deg);
+           animation: rotation 500ms forwards ease-out; 
+        //    animation: rotation 5000ms forwards ease-out; 
+        // }
+        }
+        
+    } @else {
+        .icon-container {
+            animation: reverse-rotation 500ms forwards ease-out; 
+            // animation: reverse-rotation 5000ms forwards ease-out; 
+            // transform: rotate(0deg);
+        }
+    }
+    
+
+}
+
+@include themeRotator(false);
+
+.theme-button {
+    // background-color: blue;
+    // overflow: visible;
+    position: relative;
+    padding-top: 0.375rem;
+    overflow: hidden;
+    height: 38px;
+    width: 38px;
+    outline: none;
+    border: none;
+    // outline: 2px var(--primary);
+    background-color: hsl(0, 0%, 0%, 0);
+    // background-color: blue;
+
+
+    :hover {
+        cursor: pointer;
+    }
+
+    &[data-selected] {
+        @include themeRotator(true);
+        border-color: var(--primary);
+    }
+
+    &[data-focus-visible] {
+        // border-color: var(--accent);
+        box-shadow: 0 0 0 2px var(--accent);
+    }
+    
+}
+

@@ -1,0 +1,10 @@
+.cart-btn {
+    position: relative;
+}
+
+.item-counter{
+    position: absolute;
+    transform: translate(60%, -65%);
+    color: var(--text);
+    font-size: 16px;
+}

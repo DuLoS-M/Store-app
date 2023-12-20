@@ -1,0 +1,4 @@
+.test-theme {
+  background-color: var(--background);
+  /* transition: all 100ms ease-in; */
+}
